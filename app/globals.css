@@ -5,13 +5,15 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --accent: #1e88e5; /* blue-600 */
+  --secondary-accent: #7c3aed; /* purple-600 */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --accent: #2196f3; /* blue-500 */
+  --secondary-accent: #8e24aa; /* purple-600 */
 }
 
 body {

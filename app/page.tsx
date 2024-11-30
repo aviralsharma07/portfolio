@@ -4,6 +4,7 @@ import Header from "@/components/header";
 import { Hero } from "@/components/hero";
 import Experience from "@/components/experience";
 import About from "@/components/about";
+import Projects from "@/components/projects";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Hero />
       <About />
       <Experience />
+      <Projects />
     </motion.main>
   );
 }

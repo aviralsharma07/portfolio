@@ -48,11 +48,11 @@ export const Hero = () => {
           ))}
         </motion.div>
       </div>
-      <div className="text-center z-10 max-w-4xl mx-auto px-4">
-        <motion.h1 className="text-6xl sm:text-8xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-accent to-secondary-accent" initial={{ y: -50, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.8 }}>
+      <div className="text-center z-10 max-w-5xl mx-auto">
+        <motion.h1 className="text-6xl sm:text-8xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r font-orbitron from-accent to-secondary-accent" initial={{ y: -50, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.8 }}>
           AVIRAL SHARMA
         </motion.h1>
-        <motion.div className="text-2xl sm:text-4xl mb-8" initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.8, delay: 0.5 }}>
+        <motion.div className="text-2xl font-spaceGrotesk sm:text-4xl mb-8" initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.8, delay: 0.5 }}>
           <TypeAnimation sequence={["SOFTWARE ENGINEER, FRONTEND DEVELOPER", 2000, "ENGINEERING THE WEB", 2000, "RESPONSIVE BY DESIGN", 2000]} wrapper="span" speed={50} repeat={Infinity} />
         </motion.div>
         <motion.div className="flex justify-center space-x-4" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 1.5 }}>

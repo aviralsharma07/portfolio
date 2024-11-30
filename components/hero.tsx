@@ -31,9 +31,7 @@ export const Hero = () => {
               key={i}
               className="absolute w-1 h-1 bg-blue-500 rounded-full"
               initial={{
-                // x: Math.random() * window.innerWidth,
                 x: pos.x,
-                // y: Math.random() * window.innerHeight,
                 y: pos.y,
                 opacity: Math.random(),
               }}

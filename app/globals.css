@@ -9,6 +9,13 @@
   --secondary-accent: #7c3aed; /* purple-600 */
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+  width: 100%;
+  overflow-x: hidden;
+}
+
 html.dark {
   --background: #0a0a0a;
   --foreground: #ededed;

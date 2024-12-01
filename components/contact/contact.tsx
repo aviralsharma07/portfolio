@@ -194,9 +194,9 @@ export const Contact = () => {
 
             <motion.div initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.3 }}>
               <form onSubmit={(e) => e.preventDefault()} className="space-y-4 relative z-10">
-                <CosmicInput name="name" type="text" placeholder="Your Cosmic Identity" value={formState.name} onChange={handleChange} />
-                <CosmicInput name="email" type="email" placeholder="Your Interstellar Address" value={formState.email} onChange={handleChange} />
-                <CosmicInput name="message" type="textarea" placeholder="Your Message to the Universe" value={formState.message} onChange={handleChange} />
+                <CosmicInput name="name" type="text" placeholder="Your Name" value={formState.name} onChange={handleChange} />
+                <CosmicInput name="email" type="email" placeholder="Your Email Address" value={formState.email} onChange={handleChange} />
+                <CosmicInput name="message" type="textarea" placeholder="Your Message to Maverick" value={formState.message} onChange={handleChange} />
                 <CosmicButton onClick={handleSubmit}>{isSubmitting ? "Transmitting..." : isSubmitted ? "Message Sent to the Cosmos!" : "Launch Message"}</CosmicButton>
               </form>
             </motion.div>

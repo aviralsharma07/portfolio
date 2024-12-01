@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { Github, ExternalLink, Maximize2, Code, Rocket } from "lucide-react";
+import SectionHeading from "../sectionHeading";
 
 interface Project {
   id: number;
@@ -110,10 +111,10 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
             ))}
           </motion.div>
           <motion.div className="flex gap-5 mt-5">
-            <motion.a href={project.links.github} target="_blank" rel="noopener noreferrer" className="p-3 border-accent border rounded-full text-accent" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+            <motion.a href={project.links.github} target="_blank" rel="noopener noreferrer" className="p-3 border-accent border rounded-full hover:bg-accent hover:text-white text-accent" whileHover={{ scale: 1.25, rotateX: 360, transition: { duration: 0.25, ease: "easeInOut" } }} whileTap={{ scale: 0.9 }}>
               <Github className="w-5 h-5" />
             </motion.a>
-            <motion.a href={project.links.live} target="_blank" rel="noopener noreferrer" className="p-3 border border-accent rounded-full text-accent" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+            <motion.a href={project.links.live} target="_blank" rel="noopener noreferrer" className="p-3 border border-accent rounded-full hover:bg-accent hover:text-white text-accent" whileHover={{ scale: 1.1, rotateX: 180, transition: { duration: 0.25, ease: "easeInOut" } }} whileTap={{ scale: 0.9 }}>
               <ExternalLink className="w-5 h-5" />
             </motion.a>
           </motion.div>
@@ -216,15 +217,7 @@ const Projects = () => {
   return (
     <section ref={containerRef} id="projects" className="min-h-screen relative overflow-hidden">
       <motion.div className="container mx-auto px-4" style={{ y, opacity }}>
-        <div className="flex items-center gap-4 mb-16">
-          <motion.span className="text-blue-400 font-mono text-lg" initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
-            03.
-          </motion.span>
-          <motion.h2 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600" initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.1 }}>
-            Some Things I&apos;ve Built
-          </motion.h2>
-          <motion.div className="flex-1 h-px bg-gradient-to-r from-blue-400/50 to-transparent" initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} transition={{ duration: 0.8, delay: 0.2 }} />
-        </div>
+        <SectionHeading number="03" heading="Some Things I've Built" />
 
         <div className="space-y-32 mb-32">
           {projects.map((project, index) => (

@@ -51,7 +51,7 @@ const Footer = () => {
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }} className="text-center">
-            <p className="text-xs md:text-sm text-gray-400 font-spaceGrotesk tracking-widest">
+            <p className="text-[10px] md:text-xs lg:text-sm text-gray-400 font-spaceGrotesk tracking-widest">
               © {currentYear}{" "}
               <Link href="https://www.github.com/aviralsharma07" target="_blank" className="hover:underline underline-offset-4 hover:font-semibold">
                 AVIRAL SHARMA

@@ -1,14 +1,14 @@
 "use client";
 import { motion } from "framer-motion";
 import Header from "@/components/header/header";
-import { Hero } from "@/components/hero";
+import { Hero } from "@/components/hero/hero";
 import Experience from "@/components/experience/experience";
 import About from "@/components/about/about";
 import Projects from "@/components/projects";
 import LoadingScreen from "@/components/Loading";
 import { useEffect, useState } from "react";
-import { Contact } from "@/components/contact";
-import Footer from "@/components/footer";
+import { Contact } from "@/components/contact/contact";
+import Footer from "@/components/footer/footer";
 
 export default function Home() {
   const [loadingComplete, setLoadingComplete] = useState(false);

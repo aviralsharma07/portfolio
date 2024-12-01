@@ -2,15 +2,15 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion, useAnimation, useTransform, useScroll } from "framer-motion";
-import { Linkedin, Github, Mail, FileText, Instagram, ExternalLink } from "lucide-react";
-import SectionHeading from "./sectionHeading";
+import { Linkedin, Github, Mail, FileText, BookHeart, Instagram, ExternalLink } from "lucide-react";
+import SectionHeading from "../sectionHeading";
 
 const ParticleField = ({ children }: { children: React.ReactNode }) => {
   const particleCount = 100;
   const particles = Array.from({ length: particleCount });
 
   return (
-    <div className="absolute inset-0 overflow-hidden">
+    <div className="inset-0 overflow-hidden">
       {particles.map((_, i) => (
         <motion.div
           key={i}
@@ -103,11 +103,12 @@ const SpaceshipTerminal = () => {
   const terminalRef = useRef<HTMLDivElement>(null);
 
   const socialLinks = [
-    { name: "LinkedIn", icon: Linkedin, color: "#0077B5", link: "https://linkedin.com/in/yourusername" },
-    { name: "GitHub", icon: Github, color: "#333", link: "https://github.com/yourusername" },
-    { name: "Email", icon: Mail, color: "#D44638", link: "mailto:your.email@example.com" },
-    { name: "Resume", icon: FileText, color: "#4285F4", link: "/resume.pdf" },
-    { name: "Instagram", icon: Instagram, color: "#E1306C", link: "https://instagram.com/yourusername" },
+    { name: "LinkedIn", icon: Linkedin, color: "#0077B5", link: "https://linkedin.com/in/aviral07" },
+    { name: "GitHub", icon: Github, color: "#333", link: "https://github.com/aviralsharma07" },
+    { name: "Email", icon: Mail, color: "#D44638", link: "mailto:thisisaviral200@gmail.com.com" },
+    { name: "Resume", icon: FileText, color: "#4285F4", link: "/Aviral-Sharma.pdf" },
+    { name: "Instagram", icon: Instagram, color: "#E1306C", link: "https://instagram.com/ameyaunscripted" },
+    { name: "Hashnode", icon: BookHeart, color: "#2962FF", link: "https://aviralsharma.hashnode.dev/" },
   ];
 
   useEffect(() => {
@@ -126,14 +127,14 @@ const SpaceshipTerminal = () => {
   }, []);
 
   return (
-    <motion.div ref={terminalRef} className="w-full h-[500px] bg-gray-900 rounded-lg overflow-hidden relative" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
+    <motion.div ref={terminalRef} className="w-full h-[370px] md:h-[500px] bg-gray-900 rounded-lg overflow-hidden relative" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_var(--mouse-x)_var(--mouse-y),rgba(29,78,216,0.15)_0%,transparent_80%)]" />
       <div className="absolute inset-0 bg-gradient-to-br from-blue-900 to-purple-900 opacity-50" />
       <div className="absolute inset-0 bg-[url('/circuit-board.svg')] opacity-10" />
-      <div className="relative z-10 p-8 h-full flex flex-col">
+      <div className="relative z-10 p-6 md:p-8 h-full flex flex-col">
         <div className="flex justify-between items-center mb-6">
-          <div className="text-xs text-blue-400 font-mono">SYSTEM STATUS: ONLINE</div>
-          <div className="text-xs text-blue-400 font-mono">COMMS READY</div>
+          <div className="md:text-xs text-[10px] text-blue-400 font-mono">SYSTEM STATUS: ONLINE</div>
+          <div className="md:text-xs text-[10px] text-blue-400 font-mono">COMMS READY</div>
         </div>
         <div className="flex-1 grid grid-cols-3 gap-4">
           {socialLinks.map((social) => (
@@ -141,14 +142,14 @@ const SpaceshipTerminal = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg opacity-75 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="relative z-10 h-full flex flex-col items-center justify-center p-4 bg-gray-800 rounded-lg border border-blue-500 overflow-hidden">
                 <motion.div className="absolute inset-0 bg-blue-500 opacity-0 group-hover:opacity-20" initial={false} animate={activeButton === social.name ? { scale: [1, 1.5, 1], opacity: [0, 0.2, 0] } : {}} transition={{ duration: 0.5 }} />
-                <social.icon className="w-8 h-8 text-blue-400 mb-2" />
-                <span className="text-xs text-blue-300 font-mono">{social.name.toUpperCase()}</span>
+                <social.icon className="md:w-8 md:h-8 w-5 h-5 text-blue-400 mb-2" />
+                <span className="md:text-xs text-[10px] text-blue-300 font-mono">{social.name.toUpperCase()}</span>
               </div>
             </motion.a>
           ))}
         </div>
         <div className="mt-6 flex justify-between items-center">
-          <div className="text-xs text-blue-400 font-mono">SIGNAL STRENGTH: 100%</div>
+          <div className="md:text-xs text-[10px] text-blue-400 font-mono">SIGNAL STRENGTH: 100%</div>
           <motion.div className="w-4 h-4 bg-blue-500 rounded-full" animate={{ scale: [1, 1.2, 1] }} transition={{ duration: 2, repeat: Infinity }} />
         </div>
       </div>
@@ -182,11 +183,10 @@ export const Contact = () => {
   };
 
   return (
-    <motion.section ref={containerRef} id="contact" className="min-h-screen py-20 relative overflow-hidden" style={{ opacity }}>
+    <motion.section ref={containerRef} id="contact" className="min-h-screen md:py-5 lg:py-10 relative overflow-hidden" style={{ opacity }}>
       <ParticleField>
-        <div className="container mx-auto px-4 relative z-10">
-          <SectionHeading number="04" heading="Let's Connect Voyager" />
-
+        <SectionHeading number="04" heading="Let's Connect Voyager" />
+        <div className="container mx-auto lg:px-4 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div style={{ y }} className="relative">
               <SpaceshipTerminal />

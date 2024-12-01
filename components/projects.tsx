@@ -222,7 +222,7 @@ const Projects = () => {
   const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
 
   return (
-    <section ref={containerRef} id="projects" className="min-h-screen py-20 relative overflow-hidden">
+    <section ref={containerRef} id="projects" className="min-h-screen relative overflow-hidden">
       <motion.div className="container mx-auto px-4" style={{ y, opacity }}>
         <div className="flex items-center gap-4 mb-16">
           <motion.span className="text-blue-400 font-mono text-lg" initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>

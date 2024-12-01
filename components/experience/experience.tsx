@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useState, useRef } from "react";
-import SectionHeading from "./sectionHeading";
+import SectionHeading from "../sectionHeading";
 import Link from "next/link";
 
 const experiences = [
@@ -41,11 +41,11 @@ const Experience = () => {
       <SectionHeading number="02" heading="Where I've Worked" />
 
       {/* -------------- COMPANY LIST & SELECTED COMPANY ----------- */}
-      <motion.div className="flex font-orbitron gap-8">
+      <motion.div className="flex md:flex-row flex-col font-orbitron gap-8">
         {/* COMPANY LIST */}
-        <motion.div className="flex flex-col" initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.3 }}>
+        <motion.div className="flex flex-row overflow-x-auto md:flex-col" initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.3 }}>
           {experiences.map((experience, index) => (
-            <button className={`${selectedCompany === index ? "text-accent" : "text-gray-400 hover:text-gray-200"} px-4 py-3 text-left whitespace-nowrap ${selectedCompany === index ? "border-l-2 border-accent" : ""}`} onClick={() => setSelectedCompany(index)} key={experience.company}>
+            <button className={`${selectedCompany === index ? "text-accent" : "text-gray-400 hover:text-gray-200"} px-4 py-3 text-left whitespace-nowrap ${selectedCompany === index ? "md:border-l-2 max-md:border-b-2 border-accent" : ""}`} onClick={() => setSelectedCompany(index)} key={experience.company}>
               {experience.company}
             </button>
           ))}

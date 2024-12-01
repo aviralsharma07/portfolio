@@ -57,10 +57,10 @@ export const Hero = () => {
           <TypeAnimation sequence={["SOFTWARE ENGINEER, FRONTEND DEVELOPER", 2000, "ENGINEERING THE WEB", 2000, "RESPONSIVE BY DESIGN", 2000]} wrapper="span" speed={50} repeat={Infinity} />
         </motion.div>
         <motion.div className="flex font-spaceGrotesk justify-center space-x-4" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 1.5 }}>
-          <Link href="#projects" className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 md:py-3 py-4 rounded-full text-sm md:text-lg font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105">
+          <Link href="#projects" className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 md:px-8 md:py-3 py-4 rounded-full text-sm md:text-lg font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105">
             Explore My Work
           </Link>
-          <Link href="#contact" className="bg-transparent border-2 border-blue-500 text-blue-500 px-8 md:py-3 py-4 rounded-full text-sm md:text-lg font-semibold hover:bg-blue-500 hover:text-white transition-all duration-300 transform hover:scale-105">
+          <Link href="#contact" className="bg-transparent border-2 border-blue-500 text-blue-500 px-6 md:px-8 md:py-3 py-4 rounded-full text-sm md:text-lg font-semibold hover:bg-blue-500 hover:text-white transition-all duration-300 transform hover:scale-105">
             Get in Touch
           </Link>
         </motion.div>

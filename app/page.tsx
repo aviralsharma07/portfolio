@@ -2,8 +2,8 @@
 import { motion } from "framer-motion";
 import Header from "@/components/header/header";
 import { Hero } from "@/components/hero";
-import Experience from "@/components/experience";
-import About from "@/components/about";
+import Experience from "@/components/experience/experience";
+import About from "@/components/about/about";
 import Projects from "@/components/projects";
 import LoadingScreen from "@/components/Loading";
 import { useEffect, useState } from "react";
@@ -29,7 +29,7 @@ export default function Home() {
       {!loadingComplete ? (
         <LoadingScreen />
       ) : (
-        <motion.main initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0.5 }} className="min-h-screen overflow-hidden max-w-screen px-3 md:px-10">
+        <motion.main initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0.5 }} className="min-h-screen overflow-hidden max-w-screen px-5 md:px-10">
           <Header />
           <Hero />
           <About />

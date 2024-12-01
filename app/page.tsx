@@ -4,7 +4,7 @@ import Header from "@/components/header/header";
 import { Hero } from "@/components/hero/hero";
 import Experience from "@/components/experience/experience";
 import About from "@/components/about/about";
-import Projects from "@/components/projects";
+import Projects from "@/components/projects/projects";
 import LoadingScreen from "@/components/Loading";
 import { useEffect, useState } from "react";
 import { Contact } from "@/components/contact/contact";

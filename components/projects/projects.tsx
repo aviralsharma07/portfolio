@@ -63,7 +63,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
   return (
     <motion.div ref={cardRef} style={{ y, rotate, scale }} className="relative mb-32 last:mb-0">
       <motion.div className="relative grid grid-cols-12 gap-4 items-center" initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: index * 0.2 }} viewport={{ once: true }}>
-        <div className={`col-span-7 relative aspect-video rounded-lg overflow-hidden ${index % 2 === 0 ? "order-1" : "order-2"}`} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+        <div className={`col-span-full left-0 w-full md:col-span-7 relative aspect-video rounded-lg overflow-hidden ${index % 2 === 0 ? "md:order-1" : "md:order-2"}`} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
           <motion.div
             className="absolute inset-0 z-10"
             style={{
@@ -92,7 +92,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
           </motion.div>
         </div>
 
-        <motion.div className={`col-span-5 ${index % 2 === 0 ? "order-2 pl-8" : "order-1 pr-8"}`} initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.3 }} viewport={{ once: true }}>
+        <motion.div className={`col-span-full md:col-span-5 ${index % 2 === 0 ? "order-2 md:pl-8" : "order-1 md:pr-8"}`} initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.3 }} viewport={{ once: true }}>
           <motion.span className="text-sm font-mono text-blue-400" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} viewport={{ once: true }}>
             Featured Project
           </motion.span>
@@ -108,6 +108,14 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
                 {tech}
               </span>
             ))}
+          </motion.div>
+          <motion.div className="flex gap-5 mt-5">
+            <motion.a href={project.links.github} target="_blank" rel="noopener noreferrer" className="p-3 border-accent border rounded-full text-accent" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+              <Github className="w-5 h-5" />
+            </motion.a>
+            <motion.a href={project.links.live} target="_blank" rel="noopener noreferrer" className="p-3 border border-accent rounded-full text-accent" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+              <ExternalLink className="w-5 h-5" />
+            </motion.a>
           </motion.div>
         </motion.div>
       </motion.div>

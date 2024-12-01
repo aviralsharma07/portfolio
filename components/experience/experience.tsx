@@ -45,7 +45,7 @@ const Experience = () => {
         {/* COMPANY LIST */}
         <motion.div className="flex flex-row overflow-x-auto md:flex-col" initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.3 }}>
           {experiences.map((experience, index) => (
-            <button className={`${selectedCompany === index ? "text-accent" : "text-gray-400 hover:text-gray-200"} px-4 py-3 text-left whitespace-nowrap ${selectedCompany === index ? "md:border-l-2 max-md:border-b-2 border-accent" : ""}`} onClick={() => setSelectedCompany(index)} key={experience.company}>
+            <button className={`${selectedCompany === index ? "text-accent" : "text-foreground hover:text-secondary-accent"} px-4 py-3 text-left whitespace-nowrap ${selectedCompany === index ? "md:border-l-2 max-md:border-b-2 border-accent" : ""}`} onClick={() => setSelectedCompany(index)} key={experience.company}>
               {experience.company}
             </button>
           ))}
@@ -54,25 +54,25 @@ const Experience = () => {
         {/* SELECTED COMPANY */}
         <motion.div className="flex flex-col gap-3 flex-1" initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.4 }}>
           <motion.div key={selectedCompany} initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.3 }} className="space-y-4">
-            <h3 className="text-2xl font-bold text-gray-100 font-spaceGrotesk">
+            <h3 className="text-2xl font-bold text-foreground font-spaceGrotesk">
               {experiences[selectedCompany].position}
-              <Link className="text-blue-400" href={experiences[selectedCompany].companyLink} target="_blank">
+              <Link className="text-accent" href={experiences[selectedCompany].companyLink} target="_blank">
                 {" "}
                 @ {experiences[selectedCompany].company}
               </Link>
             </h3>
-            <p className="text-gray-400 font-orbitron">{experiences[selectedCompany].date}</p>
+            <p className="text-foreground font-orbitron">{experiences[selectedCompany].date}</p>
             <ul className="space-y-4 font-spaceGrotesk">
               {experiences[selectedCompany].description.map((desc, index) => (
-                <motion.li key={index} className="flex items-center gap-3 text-gray-300" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.3, delay: index * 0.1 }}>
-                  <span className="text-blue-400">▹</span>
+                <motion.li key={index} className="flex items-center gap-3 text-foreground" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.3, delay: index * 0.1 }}>
+                  <span className="text-accent">▹</span>
                   {desc}
                 </motion.li>
               ))}
             </ul>
             <motion.div className="flex font-orbitron flex-wrap gap-2 mt-4" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.4 }}>
               {experiences[selectedCompany].tech.map((tech, index) => (
-                <span key={tech} className="px-3 py-1 text-sm font-mono text-blue-400 border border-blue-400/20 rounded-full">
+                <span key={tech} className="px-3 py-1 text-sm font-mono text-accent border border-accent rounded-full">
                   {tech}
                 </span>
               ))}

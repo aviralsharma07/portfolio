@@ -22,13 +22,7 @@ const ToggleThemeButton = () => {
     localStorage.setItem("theme", newTheme);
   };
 
-  return (
-    // <button onClick={toggleTheme} className="p-2 rounded bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-gray-100 border border-accent hover:bg-accent hover:text-white transition">
-    //   {/* {theme === "light" ? "Dark Mode" : "Light Mode"} */}
-    //   {theme === "light" ? "🌙" : "☀️"}
-    // </button>
-    <SwitchButton toggleTheme={toggleTheme} isDark={theme === "dark"} />
-  );
+  return <SwitchButton toggleTheme={toggleTheme} isDark={theme === "dark"} />;
 };
 
 export default ToggleThemeButton;

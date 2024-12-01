@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
-const SpaceFooter = () => {
+const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   // Generate random positions for stars
@@ -42,13 +43,21 @@ const SpaceFooter = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col items-center justify-center space-y-4">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-center">
-            <div className="inline-block">
-              <h2 className="text-xl font-mono bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">ENGINE_</h2>
-            </div>
+            <Link className="font-orbitron" href="/" passHref>
+              <span className="text-[33px] font-semibold text-accent mr-[2px]">Avi</span>
+              <span className="text-[33px] font-semibold text-foreground mr-[2px]">.</span>
+              <span className="text-[33px] font-semibold text-secondary-accent">_</span>
+            </Link>
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }} className="text-center">
-            <p className="text-sm font-mono text-gray-400">© {currentYear} AVIRAL SHARMA | ALL RIGHTS RESERVED</p>
+            <p className="text-xs md:text-sm text-gray-400 font-spaceGrotesk tracking-widest">
+              © {currentYear}{" "}
+              <Link href="https://www.github.com/aviralsharma07" target="_blank" className="hover:underline underline-offset-4 hover:font-semibold">
+                AVIRAL SHARMA
+              </Link>{" "}
+              | ALL RIGHTS RESERVED
+            </p>
           </motion.div>
         </div>
       </div>
@@ -56,4 +65,4 @@ const SpaceFooter = () => {
   );
 };
 
-export default SpaceFooter;
+export default Footer;

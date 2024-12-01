@@ -11,9 +11,9 @@ interface SwitchButtonProps {
 
 const SwitchButton: React.FC<SwitchButtonProps> = ({ toggleTheme, isDark }) => {
   return (
-    <motion.button onClick={toggleTheme} className={`relative w-14 h-14 rounded-full p-1 overflow-hidden ${isDark ? "bg-white" : "bg-gray-800"}`} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}>
+    <motion.button onClick={toggleTheme} className={`relative w-12 h-12 rounded-full p-1 overflow-hidden ${isDark ? "bg-white" : "bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 shadow-inner"}`} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}>
       <motion.div
-        className={`absolute inset-0 rounded-full ${isDark ? "bg-gray-800" : "bg-white"}`}
+        className={`absolute inset-0 rounded-full ${isDark ? "bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 shadow-inner" : "bg-white"}`}
         initial={false}
         animate={{
           scale: isDark ? 1 : 0,

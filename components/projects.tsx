@@ -22,42 +22,29 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: "Neural Network Visualizer",
-    description: "An interactive 3D visualization of neural networks in real-time. Users can manipulate network architecture, watch training progress, and explore data flow through neurons.",
-    image: "/placeholder.svg",
-    tech: ["Three.js", "TensorFlow.js", "React", "WebGL"],
+    title: "Schedura",
+    description: "A scheduling platform with Google Calendar integration, dynamic availability management, and Google Meet link generation using Next.js.",
+    image: "/schedura.png",
+    tech: ["NextJs", "React", "Prisma", "NeonDB", "Zod", "Clerk Auth"],
     links: {
-      github: "https://github.com",
-      live: "https://demo.com",
+      github: "https://github.com/aviralsharma07/schedura",
+      live: "https://schedura.vercel.app/",
     },
     featured: true,
     color: "#4F46E5",
   },
   {
     id: 2,
-    title: "Quantum Portfolio Manager",
-    description: "A next-generation portfolio management system using quantum-inspired algorithms for optimal asset allocation and risk management.",
-    image: "/placeholder.svg",
-    tech: ["Next.js", "Python", "D3.js", "AWS"],
+    title: "Sketchlab",
+    description: "A collaborative online whiteboard with real-time sketching, live updates, and responsive design powered by React.js and Socket.io.",
+    image: "/sketchlab.png",
+    tech: ["Next.js", "React", "Socket.io", "Context API"],
     links: {
-      github: "https://github.com",
-      live: "https://demo.com",
+      github: "https://github.com/aviralsharma07/sketchlab",
+      live: "https://sketchlab.vercel.app/",
     },
     featured: true,
     color: "#06B6D4",
-  },
-  {
-    id: 3,
-    title: "AI Code Assistant",
-    description: "An AI-powered code completion and refactoring tool that understands context and maintains coding style consistency.",
-    image: "/placeholder.svg",
-    tech: ["GPT-4", "TypeScript", "Redis", "Docker"],
-    links: {
-      github: "https://github.com",
-      live: "https://demo.com",
-    },
-    featured: true,
-    color: "#8B5CF6",
   },
 ];
 
@@ -102,9 +89,6 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
             <motion.a href={project.links.live} target="_blank" rel="noopener noreferrer" className="p-3 bg-black/80 rounded-full text-white hover:bg-black" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
               <ExternalLink className="w-6 h-6" />
             </motion.a>
-            <motion.button className="p-3 bg-black/80 rounded-full text-white hover:bg-black" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-              <Maximize2 className="w-6 h-6" />
-            </motion.button>
           </motion.div>
         </div>
 
@@ -142,45 +126,45 @@ interface MinorProject {
 const minorProjects: MinorProject[] = [
   {
     id: 1,
-    title: "Blockchain Explorer",
-    description: "A real-time blockchain explorer with transaction visualization and analytics dashboard.",
-    tech: ["React", "Web3.js", "D3.js"],
-    link: "https://github.com",
+    title: "VidTube",
+    description: "VidTube is a dynamic video sharing platform that leverages the power of YouTube's API to engage users with their favorite videos.",
+    tech: ["React", "Vite", "Bootstrap", "YouTube API"],
+    link: "https://vidtube-avi.netlify.app/",
   },
   {
     id: 2,
-    title: "AI Music Composer",
-    description: "An AI-powered tool that generates original music based on user-defined parameters and styles.",
-    tech: ["Python", "TensorFlow", "Web Audio API"],
-    link: "https://github.com",
+    title: "Chatnest",
+    description: "A real-time chat application with end-to-end encryption, user authentication, and message history using Firebase and React.",
+    tech: ["React", "Firebase", "Zustand"],
+    link: "https://github.com/aviralsharma07/react-chat-app",
   },
   {
     id: 3,
-    title: "Augmented Reality Navigation",
-    description: "A mobile app that overlays navigation information on the real world using AR technology.",
-    tech: ["React Native", "ARKit", "Google Maps API"],
-    link: "https://github.com",
+    title: "Cineboxd",
+    description: "Cineboxd allows users to search for their favorite movies, create personal movie lists (both private and public), and explore public lists created by other users.",
+    tech: ["React", "Vite", "Bootstrap"],
+    link: "https://cineboxd-eight.vercel.app/",
   },
   {
     id: 4,
-    title: "Decentralized Social Media",
-    description: "A decentralized social media platform built on blockchain technology for enhanced privacy and data ownership.",
-    tech: ["Solidity", "IPFS", "Next.js"],
-    link: "https://github.com",
+    title: "Color Matrix",
+    description: "Generates a matrix of random colors based on the user-input and calculates and displays the maximum consecutive cells with the same color in both rows and columns.",
+    tech: ["Javascript", "Tailwind"],
+    link: "https://colormatrix.netlify.app/",
   },
   {
     id: 5,
-    title: "Smart Home Ecosystem",
-    description: "An IoT-based smart home system with machine learning for predictive automation and energy optimization.",
-    tech: ["Python", "TensorFlow", "MQTT"],
-    link: "https://github.com",
+    title: "Memeify",
+    description: "Memeify is a meme generator application built using React and Vite.",
+    tech: ["React", "Vite", "Bootstrap"],
+    link: "https://memeify-avi.netlify.app/",
   },
   {
     id: 6,
-    title: "Virtual Reality Therapy",
-    description: "A VR application designed to assist in various forms of therapy, including phobia treatment and stress reduction.",
-    tech: ["Unity", "C#", "Oculus SDK"],
-    link: "https://github.com",
+    title: "Taskease",
+    description: "Taskease is a task management application that allows users to create, update, and delete tasks.",
+    tech: ["React", "Vite", "Bootstrap"],
+    link: "https://task-ease-theta.vercel.app/",
   },
 ];
 
@@ -246,7 +230,7 @@ const Projects = () => {
               03.5
             </motion.span>
             <motion.h3 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-500" initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.1 }}>
-              Cosmic Creations
+              Other Projects
             </motion.h3>
             <motion.div className="flex-1 h-px bg-gradient-to-r from-purple-400/50 to-transparent" initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} transition={{ duration: 0.8, delay: 0.2 }} />
           </div>
@@ -258,8 +242,6 @@ const Projects = () => {
           </motion.div>
         </motion.div>
       </motion.div>
-
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-900/5 to-transparent" />
     </section>
   );
 };

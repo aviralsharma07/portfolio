@@ -8,7 +8,7 @@ import Link from "next/link";
 const experiences = [
   {
     company: "Digitise My Business",
-    position: "Software Develope Intern",
+    position: "Software Developer Intern",
     date: "Jun 2024 - Present",
     description: ["Contributed to the development of Resumemate, a dynamic resume builder platform", "Built responsive and user-friendly interfaces using React and Tailwind CSS", "Integrated RESTful APIs for seamless real-time functionality", "Optimized performance by reducing load times and ensuring cross-browser compatibility", "Collaborated with backend developers and designers to implement scalable solutions"],
     tech: ["NextJs", "React", "TypeScript", "Redux Toolkit", "Tailwind CSS", "RESTful APIs"],

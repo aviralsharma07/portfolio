@@ -54,7 +54,7 @@ const About = () => {
         {/* ABOUT ME CONTENT */}
         <motion.div className="flex-1 w-full lg:w-1/2 pt-32 lg:pt-0 space-y-6 font-spaceGrotesk" initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.3 }}>
           <p className="md:text-lg text-foreground">
-            Greetings, voyager! Hi, I&apos;m Aviral, a passionate Frontend Developer with a knack for building intuitive and high-performance web applications. Currently, I&apos;m working at DigitiseMyBusiness, where I&apos;ve contributed to projects like Resumemate, a dynamic resume builder platform, honing my expertise in <span className="font-bold">NextJs, React, TavaScript, Tailwind CSS, and RESTful API integration.</span>
+            Greetings, voyager! Hi, I&apos;m Aviral, a passionate Frontend Developer with a knack for building intuitive and high-performance web applications. Currently, I&apos;m working at DigitiseMyBusiness, where I&apos;ve contributed to projects like Resumemate, a dynamic resume builder platform, honing my expertise in <span className="font-bold">NextJs, React, Typescript, Tailwind CSS, and RESTful API integration.</span>
           </p>
           <p className="md:text-lg text-foreground">
             Beyond code, I&apos;m a 4th-year engineering student driven by curiosity and a love for learning. When I&apos;m not coding, you&apos;ll find me exploring the latest tech trends or collaborating on innovative projects that solve real-world problems. <span className="font-bold">I&apos;m excited to connect and contribute to impactful teams where I can continue growing as a developer and make meaningful contributions.</span>

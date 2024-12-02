@@ -67,7 +67,7 @@ export const Hero = () => {
         </motion.div>
       </div>
       <motion.a
-        className="absolute bottom-10 w-16 cursor-pointer h-20 mx-auto rotate-180 flex justify-center"
+        className="absolute bottom-12 md:bottom-16 lg::bottom-10 w-16 cursor-pointer h-20 mx-auto rotate-180 flex justify-center"
         animate={{
           y: [0, -10, 0],
           rotate: [180, 185, 175, 180, 185, 175, 180],

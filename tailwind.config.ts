@@ -7,8 +7,13 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        accent: "var(--accent)", // Primary accent color
-        "secondary-accent": "var(--secondary-accent)", // Secondary accent color
+        accent: "var(--accent)",
+        "secondary-accent": "var(--secondary-accent)",
+        "project-card": "var(--project-card)",
+        "project-card-text": "var(--project-card-text)",
+        "minor-project-card": "var(--minor-project-card)",
+        "minor-project-card-text": "var(--minor-project-card-text)",
+        "tech-border": "var(--tech-border)",
       },
       fontFamily: {
         spaceGrotesk: `var(--font-space-grotesk)`,

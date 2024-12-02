@@ -209,10 +209,10 @@ export const Contact = () => {
   };
 
   return (
-    <motion.section ref={containerRef} id="contact" className="min-h-screen md:py-5 lg:py-10 relative overflow-hidden" style={{ opacity }}>
+    <motion.section ref={containerRef} id="contact" className="min-h-screen mx-auto max-w-screen-2xl pt-5 md:py-5 lg:py-10 relative overflow-hidden" style={{ opacity }}>
       <ParticleField>
         <SectionHeading number="04" heading="Let's Connect Voyager" />
-        <div className="container mx-auto lg:px-4 relative z-10">
+        <div className="container mx-auto lg:px-4 relative z-10 -mt-10 md:-mt-5">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div style={{ y }} className="relative">
               <SpaceshipTerminal />

@@ -9,6 +9,7 @@ import LoadingScreen from "@/components/Loading";
 import { useEffect, useState } from "react";
 import { Contact } from "@/components/contact/contact";
 import Footer from "@/components/footer/footer";
+import Blogs from "@/components/blogs/blogs";
 
 export default function Home() {
   const [loadingComplete, setLoadingComplete] = useState(false);
@@ -35,6 +36,7 @@ export default function Home() {
           <About />
           <Experience />
           <Projects />
+          <Blogs />
           <Contact />
           <Footer />
         </motion.main>

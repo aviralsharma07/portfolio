@@ -36,7 +36,7 @@ const Experience = () => {
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
 
   return (
-    <section id="experience" ref={containerRef} className="overflow-hidden min-h-screen relative">
+    <section id="experience" ref={containerRef} className="overflow-hidden max-w-screen-2xl mx-auto min-h-screen relative">
       {/*  --------------- HEADING --------------- */}
       <SectionHeading number="02" heading="Where I've Worked" />
 

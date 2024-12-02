@@ -24,7 +24,7 @@ const About = () => {
   }, [controls]);
 
   return (
-    <section className="min-h-screen mb-32 lg:mb-0" id="about">
+    <section className="min-h-screen max-w-screen-2xl mx-auto mb-32 lg:mb-0" id="about">
       {/* --------------- HEADING ---------- */}
       <SectionHeading number="01" heading="About Me" />
 

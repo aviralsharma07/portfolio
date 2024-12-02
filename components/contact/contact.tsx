@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { motion, useAnimation, useTransform, useScroll } from "framer-motion";
+import { motion, useAnimation, useTransform, useScroll, AnimatePresence } from "framer-motion";
 import { Linkedin, Github, Mail, FileText, BookHeart, Instagram, ExternalLink } from "lucide-react";
 import SectionHeading from "../sectionHeading";
 
@@ -161,6 +161,7 @@ export const Contact = () => {
   const [formState, setFormState] = useState({ name: "", email: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [showNotification, setShowNotification] = useState(false);
   const containerRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -174,12 +175,37 @@ export const Contact = () => {
     setFormState({ ...formState, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     setIsSubmitting(true);
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+    setIsSubmitted(false);
+    setShowNotification(false);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formState),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      // clear the form data after successful submission
+      setFormState({ name: "", email: "", message: "" });
+      setIsSubmitted(true);
+    } catch (error) {
+      console.error("There was an error!", error);
+    } finally {
+      setIsSubmitting(false);
+      // show the notification for 3 seconds
+      setShowNotification(true);
+      setTimeout(() => {
+        setShowNotification(false);
+      }, 3000);
+    }
   };
 
   return (
@@ -193,16 +219,27 @@ export const Contact = () => {
             </motion.div>
 
             <motion.div initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.3 }}>
-              <form onSubmit={(e) => e.preventDefault()} className="space-y-4 relative z-10">
+              <form onSubmit={handleSubmit} className="space-y-4 relative z-10">
                 <CosmicInput name="name" type="text" placeholder="Your Name" value={formState.name} onChange={handleChange} />
                 <CosmicInput name="email" type="email" placeholder="Your Email Address" value={formState.email} onChange={handleChange} />
                 <CosmicInput name="message" type="textarea" placeholder="Your Message to Maverick" value={formState.message} onChange={handleChange} />
-                <CosmicButton onClick={handleSubmit}>{isSubmitting ? "Transmitting..." : isSubmitted ? "Message Sent to the Cosmos!" : "Launch Message"}</CosmicButton>
+                <CosmicButton onClick={() => handleSubmit}>{isSubmitting ? "Transmitting..." : isSubmitted ? "Message Sent to the Cosmos!" : "Launch Message"}</CosmicButton>
               </form>
+
+              {/* Notification to show on success or error of sending message */}
+              <AnimatePresence>{showNotification && <Notification type={isSubmitted ? "success" : "error"}>{isSubmitted ? "Message sent successfully!" : "There was an error sending your message."}</Notification>}</AnimatePresence>
             </motion.div>
           </div>
         </div>
       </ParticleField>
     </motion.section>
+  );
+};
+
+const Notification = ({ children, type }: { children: React.ReactNode; type: "success" | "error" }) => {
+  return (
+    <motion.div className={`bg-${type === "success" ? "green" : "red"}-500 text-white p-4 rounded-lg text-center absolute right-1 lg:right-4 bottom-96 lg:bottom-[450px]`} initial={{ opacity: 0, x: 200 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 200 }}>
+      {children}
+    </motion.div>
   );
 };

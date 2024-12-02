@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { TypeAnimation } from "react-type-animation";
@@ -65,6 +66,22 @@ export const Hero = () => {
           </Link>
         </motion.div>
       </div>
+      <motion.a
+        className="absolute bottom-10 w-16 cursor-pointer h-20 mx-auto rotate-180 flex justify-center"
+        animate={{
+          y: [0, -10, 0],
+          rotate: [180, 185, 175, 180, 185, 175, 180],
+        }}
+        transition={{
+          duration: 4,
+          ease: "easeInOut",
+          times: [0, 0.5, 1],
+          repeat: Infinity,
+        }}
+        href="#about"
+      >
+        <Image src="/rocket.svg" alt="Rocket" fill={true} />
+      </motion.a>
     </section>
   );
 };

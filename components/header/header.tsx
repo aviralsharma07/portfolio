@@ -4,7 +4,7 @@ import ToggleThemeButton from "./ToggleThemeButton";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import HamburgerMenu from "./HamburgerIcon";
-
+// favicon.ico
 const navItems = [
   { number: "01", name: "about", href: "#about" },
   { number: "02", name: "experience", href: "#experience" },

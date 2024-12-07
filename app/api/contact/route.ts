@@ -20,7 +20,7 @@ export async function POST(request: NextRequest) {
       to: process.env.NEXT_PUBLIC_RECIPIENT_EMAIL,
       subject: `New message from ${name}`,
       html: `
-        <h1>CONTACT INITIATED BY FROM PORTFOLIO</h1>
+        <h1>CONTACT INITIATED BY ${name} FROM PORTFOLIO</h1>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Message:</strong> ${message}</p>

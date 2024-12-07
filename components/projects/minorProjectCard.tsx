@@ -66,7 +66,7 @@ export const MinorProjectCard = ({ project }: { project: MinorProject }) => {
         <p className="text-minor-project-card-text mb-4">{project.description}</p>
         <motion.div className="flex flex-wrap gap-2" initial={{ opacity: 0, y: 10 }} animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 10 }} transition={{ duration: 0.3 }}>
           {project.tech.map((tech) => (
-            <span key={tech} className="px-2 py-1 text-xs font-mono text-blue-300 border border-blue-400/20 rounded-full">
+            <span key={tech} className="px-2 py-1 text-xs font-mono text-minor-project-tech border border-minor-project-tech-border rounded-full">
               {tech}
             </span>
           ))}

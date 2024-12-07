@@ -12,6 +12,8 @@
   --minor-project-card: #cbd5e1;
   --minor-project-card-text: #4b5563;
   --tech-border: #93c5fd;
+  --minor-project-tech: #596370;
+  --minor-project-tech-border: #596370;
 }
 
 html {
@@ -31,6 +33,8 @@ html.dark {
   --minor-project-card: #1f2937;
   --minor-project-card-text: #9ca3af;
   --tech-border: #60a5fa33;
+  --minor-project-tech: #64b5f6;
+  --minor-project-tech-border: rgb(96 165 250 / 0.2);
 }
 
 body {

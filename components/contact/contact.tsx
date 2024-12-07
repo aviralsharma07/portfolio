@@ -180,6 +180,17 @@ export const Contact = () => {
     setIsSubmitting(true);
     setIsSubmitted(false);
     setShowNotification(false);
+
+    // if form is empty then set showNotification to true and return
+    if (!formState.name && !formState.email && !formState.message) {
+      setShowNotification(true);
+      setTimeout(() => {
+        setShowNotification(false);
+      }, 3000);
+      setIsSubmitting(false);
+      return;
+    }
+
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -227,7 +238,7 @@ export const Contact = () => {
               </form>
 
               {/* Notification to show on success or error of sending message */}
-              <AnimatePresence>{showNotification && <Notification type={isSubmitted ? "success" : "error"}>{isSubmitted ? "Message sent successfully!" : "There was an error sending your message."}</Notification>}</AnimatePresence>
+              <AnimatePresence>{showNotification && <Notification type={isSubmitted ? type.success : !formState.name && !formState.email && !formState.message ? type.empty : type.error} />}</AnimatePresence>
             </motion.div>
           </div>
         </div>
@@ -236,10 +247,25 @@ export const Contact = () => {
   );
 };
 
-const Notification = ({ children, type }: { children: React.ReactNode; type: "success" | "error" }) => {
+const Notification = ({ type }: { type: { color: string; message: string } }) => {
   return (
-    <motion.div className={`bg-${type === "success" ? "green" : "red"}-500 text-white p-4 rounded-lg text-center absolute right-1 lg:right-4 bottom-96 lg:bottom-[450px]`} initial={{ opacity: 0, x: 200 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 200 }}>
-      {children}
+    <motion.div className={`bg-${type.color}-500 text-white p-4 rounded-lg text-center absolute right-1 lg:right-4 bottom-96 lg:bottom-[450px]`} initial={{ opacity: 0, x: 200 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 200 }}>
+      {type.message}
     </motion.div>
   );
+};
+
+const type = {
+  success: {
+    color: "green",
+    message: "Message sent successfully!",
+  },
+  error: {
+    color: "red",
+    message: "There was an error sending your message.",
+  },
+  empty: {
+    color: "yellow",
+    message: "Please fill in all the fields.",
+  },
 };

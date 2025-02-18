@@ -7,9 +7,17 @@ import Link from "next/link";
 
 const experiences = [
   {
+    company: "Zappit.ai",
+    position: "Frontend Developer Intern",
+    date: "Jan 2025 -  Present",
+    description: ["Working on AI based tools for Agentic SEO and Social Intelligence", "Using Framer Motion for pixel perfect animations and transitions"],
+    tech: ["NextJs", "React", "TypeScript", "Redux Toolkit", "Tailwind CSS", "RESTful APIs"],
+    companyLink: "https://zappit.ai",
+  },
+  {
     company: "Digitise My Business",
     position: "Software Developer Intern",
-    date: "Jun 2024 - Present",
+    date: "Jun 2024 - Dec 2024",
     description: ["Contributed to the development of Resumemate, a dynamic resume builder platform", "Built responsive and user-friendly interfaces using React and Tailwind CSS", "Integrated RESTful APIs for seamless real-time functionality", "Optimized performance by reducing load times and ensuring cross-browser compatibility", "Collaborated with backend developers and designers to implement scalable solutions"],
     tech: ["NextJs", "React", "TypeScript", "Redux Toolkit", "Tailwind CSS", "RESTful APIs"],
     companyLink: "https://digitisemybusiness.com",

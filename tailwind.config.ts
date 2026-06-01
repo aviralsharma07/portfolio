@@ -1,25 +1,40 @@
 import type { Config } from "tailwindcss";
 
 export default {
-  content: ["./pages/**/*.{js,ts,jsx,tsx,mdx}", "./components/**/*.{js,ts,jsx,tsx,mdx}", "./app/**/*.{js,ts,jsx,tsx,mdx}"],
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        bg: "var(--bg)",
+        "bg-secondary": "var(--bg-secondary)",
+        text: "var(--text)",
+        "text-muted": "var(--text-muted)",
+        "text-faint": "var(--text-faint)",
         accent: "var(--accent)",
-        "secondary-accent": "var(--secondary-accent)",
-        "project-card": "var(--project-card)",
-        "project-card-text": "var(--project-card-text)",
-        "minor-project-card": "var(--minor-project-card)",
-        "minor-project-card-text": "var(--minor-project-card-text)",
-        "tech-border": "var(--tech-border)",
-        "minor-project-tech": "var(--minor-project-tech)",
-        "minor-project-tech-border": "var(--minor-project-tech-border)",
+        "accent-hover": "var(--accent-hover)",
+        border: "var(--border)",
+        "code-bg": "var(--code-bg)",
       },
       fontFamily: {
-        spaceGrotesk: `var(--font-space-grotesk)`,
-        orbitron: `var(--font-orbitron)`,
+        serif: ["var(--font-source-serif)", "Georgia", "Times New Roman", "serif"],
+        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        mono: ["var(--font-jetbrains)", "Fira Code", "monospace"],
+      },
+      maxWidth: {
+        prose: "720px",
+      },
+      typography: {
+        DEFAULT: {
+          css: {
+            maxWidth: "720px",
+            lineHeight: "1.75",
+          },
+        },
       },
     },
   },

@@ -1,15 +1,43 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Orbitron } from "next/font/google";
+import { Source_Serif_4, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import { SpaceBackground } from "@/components/SpaceBackground";
+import { Nav } from "@/components/layout/nav";
+import { Footer } from "@/components/layout/footer";
+import { ThemeProvider } from "@/components/layout/theme-provider";
 
-const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700"], variable: "--font-space-grotesk", fallback: ["sans-serif"] });
-const orbitron = Orbitron({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-orbitron", fallback: ["sans-serif"] });
+const sourceSerif = Source_Serif_4({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  variable: "--font-source-serif",
+  display: "swap",
+});
 
-// Title and description of my Developer Portfolio
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-jetbrains",
+  display: "swap",
+});
+
+
+
 export const metadata: Metadata = {
-  title: "Aviral Sharma | Software Engineer | Frontend Developer",
-  description: "Portfolio of Aviral Sharma, Software Engineer specializing in frontend development.",
+  title: "Aviral Sharma",
+  description:
+    "Builder at the intersection of engineering, design, and art. Currently building the health insurance database India doesn't have.",
+  openGraph: {
+    title: "Aviral Sharma",
+    description:
+      "Builder at the intersection of engineering, design, and art.",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -18,10 +46,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${spaceGrotesk.variable} ${orbitron.variable}`}>
-        <SpaceBackground />
-        {children}
+    <html
+      lang="en"
+      className={`${sourceSerif.variable} ${inter.variable} ${jetbrainsMono.variable}`}
+      suppressHydrationWarning
+    >
+      <body>
+        <ThemeProvider>
+          <div className="min-h-screen flex flex-col">
+            <Nav />
+            <main className="flex-1 page-container py-12 md:py-16">
+              {children}
+            </main>
+            <Footer />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );

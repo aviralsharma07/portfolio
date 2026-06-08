@@ -213,7 +213,7 @@ function MetricCard({
 
 export default function PolicyLensWritingPage() {
   return (
-    <article className="mx-auto max-w-[860px] border border-red-600 px-5 pb-24 pt-10 sm:px-8">
+    <article className="mx-auto max-w-[860px] px-5 pb-24 pt-10 sm:px-8">
       <header className="mb-14 border-b border-border pb-12">
         <p className="mb-4 font-sans text-xs uppercase tracking-[0.18em] text-text-faint">
           Writing / Technical Story

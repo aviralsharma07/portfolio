@@ -6,7 +6,7 @@ export default function Home() {
       <p className="text-lg" style={{ lineHeight: 1.8 }}>
         I&apos;m Aviral. I build things, write about what I learn, and
         sometimes share the wreckage publicly. Right now I&apos;m working on a
-        health insurance database, learning AI engineering, and playing too much
+        PolicyLens, learning AI engineering, and playing too much
         badminton.
       </p>
 

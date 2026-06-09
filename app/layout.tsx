@@ -31,7 +31,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Aviral Sharma",
   description:
-    "Builder at the intersection of engineering, design, and art. Currently building the health insurance database India doesn't have.",
+    "Builder at the intersection of engineering, design, and art. Building PolicyLens, a document compiler for Indian insurance PDFs.",
   openGraph: {
     title: "Aviral Sharma",
     description:

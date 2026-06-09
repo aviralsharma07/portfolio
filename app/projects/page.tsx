@@ -31,20 +31,16 @@ const entries: Entry[] = [
     ],
   },
   {
-    title: "India Health Insurance Database",
-    period: "2024 – present",
+    title: "PolicyLens",
+    period: "May 2026",
     kind: "project",
     description:
-      "There is no structured, queryable database of health insurance policy terms in India. Not from IRDAI, not from PolicyBazaar, not from anyone. Consumers discover room rent sub-limits, co-payment clauses, and hidden waiting periods only at claim time, when it's too late. I'm building the database that should exist. The first problem was the data itself: insurance policy PDFs have deeply nested hierarchical structure that breaks every standard tool. RAG fails. Vector DBs lose the hierarchy. LLMs hallucinate clause relationships. So I built a custom PDF-to-tree compiler from scratch, because the easy ways genuinely don't work on this kind of document.",
-    tech: ["Python", "TypeScript", "LLMs", "Supabase", "SQLite", "Custom PDF Parser"],
+      "A document compiler for Indian health insurance PDFs. Policy wordings are deeply nested legal documents that break every standard tool—RAG loses hierarchy, vector DBs flatten structure, LLMs hallucinate clause relationships. PolicyLens processes them through a multi-stage pipeline: physical layer (PDF structure), logical layer (clause boundaries, hierarchy), and semantic layer (typed fact extraction with evidence coordinates). The engine worked—490/490 tests passing, 647 active policies processed—but the prototype revealed that even perfect parsing can't guarantee accurate product recommendations. The project closed out after 2 weeks as a finished open-source artifact.",
+    tech: ["Python", "TypeScript", "LLMs", "SQLite"],
     links: [
       {
-        label: "Database",
-        url: "https://github.com/aviralsharma07/open-codes-health",
-      },
-      {
-        label: "Parser",
-        url: "https://github.com/aviralsharma07/doc-structure-engine",
+        label: "GitHub",
+        url: "https://github.com/aviralsharma07/PolicyLens",
       },
     ],
   },

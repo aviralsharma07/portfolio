@@ -38,18 +38,19 @@ export default function NowPage() {
       <div className="mt-10">
         <NowSection title="Building">
           <p>
-            <strong>India Health Insurance Database</strong> &ndash; The custom
-            PDF-to-tree compiler is the current focus. Standard approaches
-            don&apos;t work on nested policy documents, so I&apos;m building the
-            parser from scratch. Slow, methodical, occasionally maddening.
+            <strong>PolicyLens</strong> &ndash; A 2-week sprint building a
+            document compiler for Indian insurance PDFs. Multi-stage pipeline,
+            490 passing tests, 647 policies processed. Closed out as a finished
+            open-source artifact. The repo chronicles what worked, what
+            didn&apos;t, and why.
           </p>
         </NowSection>
 
         <NowSection title="Learning">
           <p>
-            AI engineering, self-built 3-month roadmap. Currently exploring
-            embeddings and retrieval systems. The insurance project is the
-            learning vehicle. Everything gets applied to a real, hard problem.
+            Currently exploring embeddings and retrieval systems. The insurance
+            project is the learning vehicle. Everything gets applied to a real,
+            hard problem.
           </p>
         </NowSection>
 
